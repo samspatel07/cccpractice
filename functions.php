@@ -4,8 +4,8 @@
 
 <?php
 // 1) Returns the length of a string
-$a = "Hello World!";
-echo strlen($a);
+$len = "Hello World!";
+echo strlen($len);
 echo '<br>';
 
 // 2) Replaces all occurrences of a substring with another substring in a given string.
@@ -48,7 +48,61 @@ echo'<br>';
 // 8) Joins array elements with a string.
 $arr = array("Hello", "Cybercom", "Creation!");
 echo implode(" ",$arr);
+
+$ar = array("Hey", "Cybercom", "Creation!");
+echo implode(" ",$ar);
+echo'<br>';
+
+// 9)Splits a string into an array by a specified delimiter.
+// $delimiter = Required. Specifies where to break the string
+$string = "Hello world! , Have a nice day";
+print_r (explode(" ", $string));
+echo '<br>';
+
+$str = 'one,two,three,four';
+
+// zero limit
+print_r(explode(',',$str,0));
+echo '<br>';
+// positive limit
+print_r(explode(',',$str,2));
+echo '<br>';
+// negative limit
+print_r(explode(',',$str,-1));
+echo '<br>';
+
+// 10)Converts special characters to HTML entities.(Convert the predefined characters "<" (less than) and ">" (greater than) to HTML entities:)
+$str1 = "This is some <b>bold</b> text.";
+echo htmlspecialchars($str1);
+echo'<br>';
+
+/*Cybercom &amp; 'Creation'<br>
+Cybercom &amp; &#039;Creation&#039;<br>
+Cybercom &amp; 'Creation'*/
+
+$str2 = "Cybercom & 'Creation'";
+echo htmlspecialchars($str2, ENT_COMPAT); // Will only convert double quotes
+echo '<br>';
+echo htmlspecialchars($str2, ENT_QUOTES); // Converts double and single quotes
+echo '<br>';
+echo htmlspecialchars($str2, ENT_NOQUOTES); // Does not convert any quotes
+echo'<br>';
+
+// 11)Converts all applicable characters to HTML entities.
+$str3 = '<a href="https://www.cybercomcreation.com">Go to cybercomcreation.com</a>';
+echo htmlentities($str3);
+echo'<br>';
+
+$str = "I Love 'PHP'";
+echo htmlentities($str, ENT_COMPAT); // Will only convert double quotes
+echo'<br>';
+echo htmlentities($str, ENT_QUOTES); // Converts double and single quotes
+echo'<br>';
+echo htmlentities($str, ENT_NOQUOTES); // Does not convert any quotes
+echo'<br>';
 ?> 
+
+
 
 </body>
 </html>
