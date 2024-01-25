@@ -7,7 +7,7 @@ function insert($t, $data) {
     $values = array();
 
     foreach ($data as $field => $value) {
-        $columns[] = "$field";
+        $columns[] = "`$field`";
         $values[] = "'$value'";
     }
 

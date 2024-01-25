@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
     <title>Form</title>
+    <style>
+        .content form .user-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 0px 0;
+        } 
+    </style>
 </head>
 <body>
-<h2>Product form</h2>
+<!-- <h2>Product form</h2> -->
 <form action="conn.php" method="post">
+    <label for="product_id">Product id</label>
+    <input type="text" id="product_id" name="product_id"><br>
+
     <label for="product_name">Product Name:</label>
-    <input type="text" id="product_name" name="group1[product_name]"><br>
+    <input type="text" id="product_name" name="product_name"><br>
 
     <label for="sku">SKU</label>
-    <input type="text" id="sku" name="group1[sku]"><br>
+    <input type="text" id="sku" name="sku"><br>
 
     <label> Product type: </label><br>
-    <input type="radio" id="product_type" name="group1[product_type]" value="simple">
+    <input type="radio" id="product_type" name="product_type" value="simple">
     <label for="product_type">simple</label><br>
-    <input type="radio" id="product_type" name="group1[product_type]" value="bundle">
+    <input type="radio" id="product_type" name="product_type" value="bundle">
     <label for="product_type">bundle</label><br>
 
     <label for="category">Category:</label>
-        <select id="category" name="group2[category]">
+        <select id="category" name="category">
             <option value="Bar_Game_Room">Bar & Game Room</option>
             <option value="Bedroom">Bedroom</option>
             <option value="Decor">Decor</option>

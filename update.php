@@ -5,11 +5,11 @@ function update($t, $data, $wh) {
     $whereCon = array();
 
     foreach ($data as $field => $value) {
-        $columns[] = "$field = '$value'";
+        $columns[] = "`$field` = '$value'";
     }
 
     foreach ($wh as $field => $value) {
-        $whereCon[] = "$field = '$value'";
+        $whereCon[] = "`$field` = '$value'";
     }
 
     $columnsString = implode(", ", $columns);
@@ -18,7 +18,7 @@ function update($t, $data, $wh) {
     echo "UPDATE {$t} SET {$columnsString} WHERE {$whereConString};";
 }
 
-update('asd', ['name' => 'sam', 'sdhsgd' => 'cjhcgf'], ['id' => 3, 'email' => 'sdsa@.com']);
+update('asd', ['name' => '', 'sdhsgd' => 'cjhcgf'], ['id' => 3, 'email' => 'sdsa@.com']);
 
 die;
 ?>

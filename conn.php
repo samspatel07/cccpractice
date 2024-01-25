@@ -1,6 +1,6 @@
 <?php
 
-function update($t, $d = [], $where = []) {
+/*function update($t, $d = [], $where = []) {
     $columns = $whereCond = [];
     foreach($d as $field => $vale) {
         $columns[] = " `$field` = '$vale'";
@@ -29,12 +29,12 @@ function insert($table_name,$data){
     //echo "UPDATE {$table_name} SET ";
     //UPDATE table_name SET column1=value1,column2=value2, WHERE column_name = col_name
     
-}
-insert("ABC",$_POST["group1"]);
-//echo "<pre>";
-print_r($_POST["group1"]);
-print_r($_POST["group2"]);
-die;
+}*/
+//insert("ABC",$_POST["product"]);
+// echo "<pre>";
+// print_r($_POST["product"]);
+// //print_r($_POST["product1"]);
+// die;
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -67,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 }
+
 
 
 ?>
