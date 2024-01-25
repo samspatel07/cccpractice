@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,7 +41,7 @@
 <?php
 
 include 'sql/connection.php'; // Include database connection file
-include 'sql/functions.php'; // Include the file with functions
+include 'sql/function.php'; // Include the file with functions
 $table_name = 'ccc_category';
 $select_query = select($table_name); // Assuming to select all records
 $result = mysqli_query($conn, $select_query);
@@ -76,4 +76,4 @@ mysqli_close($con);
         }
     </script>
 </body>
-</h -->
+</h

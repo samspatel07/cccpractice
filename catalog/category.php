@@ -1,4 +1,4 @@
-<!-- <html>
+<html>
 <body>
     <form action="" method="POST">
         <label for="name">Category Name</label>
@@ -14,7 +14,7 @@
 </html>
 <?php
 include 'sql/connection.php'; // Include database connection file
-include 'sql/functions.php'; // Include the file with functions
+include 'sql/function.php'; // Include the file with functions
 
 if (isset($_POST['submit'])) {
     $category_data = [
@@ -39,4 +39,4 @@ if (isset($_POST['submit'])) {
 
 // ... Rest of your HTML and PHP code ...
 
-?> -->
+?>
