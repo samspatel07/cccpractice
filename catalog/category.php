@@ -28,12 +28,12 @@ if (isset($_POST['submit'])) {
     $insert_query = insert($table_name, $category_data);
 
     // Execute the query
-    $result = mysqli_query($conn, $insert_query);
+    $result = mysqli_query($con, $insert_query);
 
     if ($result) {
         echo "Category added successfully!";
     } else {
-        echo "Error: " . mysqli_error($conn);
+        echo "Error: " . mysqli_error($con);
     }
 }
 
