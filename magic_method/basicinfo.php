@@ -16,6 +16,8 @@
 // __invoke()
 // __clone()
 
-include_once 'classes/abc.php';
-include_once 'classes/xyz.php';
+// include 'methods.php';
+
+// $user = new User();
+
 ?>

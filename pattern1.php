@@ -1,44 +1,34 @@
 <?php
+// Returns maximum in array
+function getMax($array) 
+{
+   $n = count($array); 
+   $max = $array[0];
+   for ($i = 1; $i < $n; $i++) 
+       if ($max < $array[$i])
+           $max = $array[$i];
+    return $max;       
+}
+ 
+// Returns maximum in array
+function getMin($array) 
+{
+   $n = count($array); 
+   $min = $array[0];
+   for ($i = 1; $i < $n; $i++) 
+       if ($min > $array[$i])
+           $min = $array[$i];
+    return $min;       
+}
+ 
+// Driver code
+$array = array(1,3,5,7,9);
+echo(getMax($array));
+echo("\n");
+echo(getMin($array));
 
-$n=11;
 
-if($n%2==0){
-for($i=1; $i<$n; $i++){
-    for($j=1; $j<=$n; $j++){
-        if($i<=$n/2){
-            if($i<=$j and $j<=$n-$i+1){
-                echo $j." ";
-            }else{
-                echo "- ";
-            }
-        }else{
-            if ($i >= $j-1 and $j >= $n-$i) {
-                echo $j . " ";
-            } else {
-                echo "- ";
-            }
-        }
-    }
-    echo "<br>";
-}
-}else{
-for ($i = 1; $i < $n; $i++) {
-    for ($j = 1; $j <= $n; $j++) {
-        if ($i <= ($n/2)+1) {
-            if ($i <= $j and $j <= $n - $i + 1) {
-                echo $j . " ";
-            } else {
-                echo "- ";
-            }
-        } else {
-            if ($i >= $j - 1 and $j >= $n - $i) {
-                echo $j . " ";
-            } else {
-                echo "- ";
-            }
-        }
-    }
-    echo "<br>";
-}
-}
+//  for($i=0;)
+// for()
+
 ?>

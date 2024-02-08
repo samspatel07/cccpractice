@@ -148,6 +148,10 @@
     echo array_shift($a);
     print_r ($a);
     echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
 
     /*9. array_splice($array, $start, $length, $replacement):
     Removes a portion of the array and replaces it with something else.

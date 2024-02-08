@@ -175,7 +175,7 @@ echo str_pad($str,20,".",STR_PAD_LEFT);
 echo "<br>";
 
 $str = "Hello World";
-echo str_pad($str,20,".:",STR_PAD_BOTH);
+echo str_pad($str,20,".",STR_PAD_BOTH);
 echo "<br>";
 
 // 19)Locale based string comparison.
@@ -183,7 +183,7 @@ echo "<br>";
 echo strcoll("Hello sam!","Hello sam!");
 echo "<br>";
 
-echo strcoll("Hello sam!","Hello sam!");
+echo strcoll("Hello sam!","Hello sam");
 echo "<br>";
 //If this function returns 0, the two strings are equal.
 
@@ -192,7 +192,7 @@ echo "<br>";
 echo strcspn("Hello sam!","s");
 echo "<br>";
 
-echo strcspn("Hello sam!","s",0,6); // The start position is 0 and the length of the search string is 6.
+echo strcspn("Hello sam!","s",0,9); // The start position is 0 and the length of the search string is 6.
 echo "<br>";
 
 // 21)Case-insensitive search for the first occurrence of a string.

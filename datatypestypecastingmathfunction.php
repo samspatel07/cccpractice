@@ -8,7 +8,7 @@
 //The PHP var_dump() function returns the data type and value:
 //1)integer : Represents whole numbers without a decimal point.
 $integerVar = 42;   
-var_dump ($integerVar);
+echo ($integerVar);
 echo "<br>";
 
 //2)float : Represents numbers with a decimal point.
