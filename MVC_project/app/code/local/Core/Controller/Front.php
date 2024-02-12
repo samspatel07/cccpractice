@@ -4,22 +4,14 @@ class Core_Controller_Front
 {
     public function init()
     {
-        $request = new Core_Model_Request();
-        $moduleName = $request->getModuleName();
-        $controllerName = $request->getControllerName();
-        $actionName = $request->getActionName();
+        $coreRequestModel = Mage::getModel('core/request');
 
-        // echo $request->getControllerName();
-        // echo $request->getActionName();
-        // echo $request->getModuleName();
+        // $moduleName = $coreRequestModel->getModuleName();
+        // $controllerName = $coreRequestModel->getControllerName();
+        $actionName = $coreRequestModel->getActionName() . "Action";
 
-        $classN = $request->getFullControllerClass();
-        // echo "$classN<br>";
-        $indexAction = new $classN();
-        $action = $actionName . 'Action';
-        $indexAction->$action();
-        // var_dump($indexAction);
+        $frontControllerClass = $coreRequestModel->getFullControllerClass();
+        $frontControllerObj = new $frontControllerClass();
+        $frontControllerObj->$actionName();
     }
 }
-
-?>

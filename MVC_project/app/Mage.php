@@ -2,44 +2,43 @@
 
 class Mage
 {
+    protected static $_baseDir = 'C:\xampp\htdocs\practise\MVC_project';
 
     public static function init()
     {
-        // $coreModel = new Core_Model_Request();
-        // echo $coreModel->getRequestUri();
-        // $request = Mage::getModel("core/request");
-        $frontObj = new Core_Controller_Front();
-        // $request = $getClassName->getRequestUri();
-        // $frontController = new Core_Block_Controller_Front();
-        echo $frontObj->init();
-        // echo $getClassName;
+        $frontContoller = new Core_Controller_Front();
+        $frontContoller->init();
     }
 
     public static function getModel($className)
     {
-        $model = ucwords(str_replace('/', '_Model_', $className), '_');
-        return new $model;
+        $className = str_replace('/', '_Model_', $className);
+        $className = ucwords($className, '_');
+        return new $className();
+    }
+
+    public static function getBlock($className)
+    {
+        $className = str_replace('/', '_Block_', $className);
+        $className = ucwords($className, '_');
+        return new $className();
     }
 
     public static function getSingleton($className)
     {
-
     }
-
     public static function register($key, $value)
     {
-
     }
-
     public static function registry($key)
     {
-
     }
-
     public static function getBaseDir($subDir = null)
     {
-
+        if (is_null($subDir)) {
+            return self::$_baseDir;
+        }
+        return self::$_baseDir . '/' . $subDir;
     }
-}
 
-?>
+}

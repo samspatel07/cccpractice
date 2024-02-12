@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="">
     <title>Form</title>
-    <style>
+    <!-- <style>
         .content form .user-details {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             margin: 20px 0 0px 0;
         } 
-    </style>
+    </style> -->
 </head>
 <body>
 <!-- <h2>Product form</h2> -->
