@@ -8,9 +8,17 @@
 </head>
 
 <body>
-    <h1>
+    <!-- <h1>
         <?php echo get_class($this) ?>
-    </h1>
+    </h1> -->
+    <div>
+        <?php echo $this->setTemplate("code/messages.phtml");?>
+        <?php echo $this->getChildHtml('messages') ?>
+        <?php echo $this->getChildHtml('header') ?>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('head') ?>
+        <?php echo $this->getChildHtml('content') ?>
+    </div>
 </body>
 
 </html>
