@@ -2,11 +2,11 @@
 
 class Core_Model_Abstract
 {
-    protected $data = [];
-    protected $resourceClass = '';
-    protected $collectionClass = '';
-    protected $resource = null;
-    protected $collection = null;
+    protected $_data = [];
+    protected $_resourceClass = '';
+    protected $_collectionClass = '';
+    protected $_resource = null;
+    protected $_collection = null;
     public function __construct()
     {
     }
