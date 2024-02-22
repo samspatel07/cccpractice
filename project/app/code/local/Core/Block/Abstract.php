@@ -29,7 +29,6 @@ class Core_Block_Abstract
     }
     public function setData($data)
     {
-    
     }
     // public function getUrl($action = null, $controller = null, $params = [], $resetParams = false)
     public function getUrl($path)
@@ -43,5 +42,4 @@ class Core_Block_Abstract
     {
         include Mage::getBaseDir('app') . '/design/frontend/template/' . $this->getTemplate();
     }
-
 }

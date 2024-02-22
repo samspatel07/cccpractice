@@ -17,4 +17,7 @@ class Catalog_Controller_Index
     {
         echo "Catalog Delete Action";
     }
+    // public function updateAction(){
+    //     echo "Catalog Update Action";
+    // }
 }

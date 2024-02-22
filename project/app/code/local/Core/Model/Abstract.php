@@ -16,15 +16,18 @@ class Core_Model_Abstract
     }
     public function setResourceClass($resourceClass)
     {
+        $this->_resourceClass = $resourceClass;
+        return $this;
     }
     public function setCollectionClass($collectionClass)
     {
+        $this->_collectionClass = $collectionClass;
+        return $this;
     }
     public function setId($id)
     {
-         $this->_data[$this->getResource()->getPrimaryKey()] = $id;
-         return $this;
-        
+        $this->_data[$this->getResource()->getPrimaryKey()] = $id;
+        return $this;
     }
     public function getId()
     {
@@ -32,10 +35,6 @@ class Core_Model_Abstract
     }
     public function getResource()
     {
-        // $modelClass = get_class($this);
-        // $class = substr($modelClass, 0, strpos($modelClass, '_Model_') + 6) . '_Resource_' . substr($modelClass, strpos($modelClass, '_Model_') + 7);
-        // $className = str_replace('_Model_','_Model_Resource_',$modelClass);
-        // return new $className();
         return new $this->_resourceClass();
     }
     public function getCollection()
@@ -63,7 +62,6 @@ class Core_Model_Abstract
     }
     public function __set($key, $value)
     {
-    
     }
     public function __get($key)
     {
@@ -98,6 +96,13 @@ class Core_Model_Abstract
     }
     public function delete()
     {
+        $this->getResource()->delete($this);
+        return $this;
     }
+    // public function update()
+    // {
+    //     $this->getResource()->update($this);
+    //     return $this;
+    // }
 
 }

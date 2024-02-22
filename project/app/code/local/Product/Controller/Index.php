@@ -17,4 +17,7 @@ class Product_Controller_Index
     {
         echo "Product Delete Action";
     }
+    // public function updateAction(){
+    //     echo "Product Update Action";
+    // }
 }

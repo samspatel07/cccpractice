@@ -3,6 +3,7 @@
 class Mage
 {
     protected static $_baseDir = 'C:/xampp/htdocs/practise/project';
+    protected static $_baseUrl = 'http://localhost/practise/project';
 
     public static function init()
     {
@@ -39,6 +40,13 @@ class Mage
             return self::$_baseDir;
         }
         return self::$_baseDir . '/' . $subDir;
+    }
+    public static function getBaseUrl($subUrl = null)
+    {
+        if (is_null($subUrl)) {
+            return self::$_baseUrl;
+        }
+        return self::$_baseUrl . '/' . $subUrl;
     }
 
 }
