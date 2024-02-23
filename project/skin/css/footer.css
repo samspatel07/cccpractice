@@ -1,47 +1,164 @@
-footer {
-    background-color: #333;
-    color: #fff;
+Overall color scheme
+.footer {
+    background-color: #afc2ea; /* Light blue */
+    color: #385a79; /* Dark teal */
+  }
+  
+  /* Footer sections */
+  .footer-info,
+  .footer-links,
+  .footer-contact {
     padding: 20px;
-    font-size: 14px;
+    border-bottom: 1px solid #d8e3e8; /* Light gray border */
+  }
+  
+  /* Logo */
+  .logo1 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logo1 img {
+    width: 100px;
+    height: auto;
+
+    filter: drop-shadow(0 0 3px #9fa8b2); /* Subtle drop shadow */
+  }
+  
+  /* Footer links */
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links a {
+    color: inherit; /* Use the footer's default color */
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    color: #207cca; /* Brighter teal hover color */
+  }
+  
+  /* Footer contact */
+  .footer-contact p {
+    margin-bottom: 10px;
+  }
+  
+  /* Copyright */
+  .copyright {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #afc2ea; /* Lighter gray */
+  }
+  
+  .copyright p {
+    margin: 0;
+  }
+  
+  /* Uniqueness elements */
+  .footer-info p {
+    color: #9fa8b2; /* Lighter text for better contrast */
+    font-style: italic; /* Italics for emphasis */
+  }
+  
+  .footer-links h3 {
+    color: #6f98ad; /* Slightly darker teal for headings */
+  }
+  
+  .footer-contact h3 {
+    color: #25658a; /* More saturated teal for emphasis */
+  }
+  
+  /* Add more unique styles here! */
+  .footer .logo img {
+    filter: drop-shadow(0 0 5px #9fa8b2); /* Subtle drop shadow */
+  }
+  
+  .footer-links a:active {
+    transform: translateY(2px); /* Small bounce effect on click */
+    transition: transform 0.1s ease-in-out; /* Smooth transition */
+  }
+  
+  
+  .site-footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
-.footerSection-1 {
+.footer-links {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+/* .logo3 {
+  display: flex;
+  justify-content: center;
+} */
 
-.footerItem {
-    flex: 0 0 25%;
-    padding: 10px;
+.logo3 img {
+  width: 20px;
+  /* height: 0px; */
+
+  filter: drop-shadow(0 0 3px #9fa8b2); /* Subtle drop shadow */
+}
+.logo4 img {
+  width: 20px;
+  /* height: 0px; */
+
+  filter: drop-shadow(0 0 3px #9fa8b2); /* Subtle drop shadow */
+}
+.logo5 img {
+  width: 20px;
+  /* height: 0px; */
+
+  filter: drop-shadow(0 0 3px #9fa8b2); /* Subtle drop shadow */
 }
 
-.footerHeading {
-    font-weight: bold;
-    margin-bottom: 5px;
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
 }
 
-ul {
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
     list-style-type: none;
     padding: 0;
 }
 
-ul li {
+.footer-section ul li {
     margin-bottom: 5px;
 }
 
-ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-ul li a:hover {
-    text-decoration: underline;
-}
-
-.footerSection-2 {
-    text-align: center;
+.footer-contact {
     margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #fff;
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer-social ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-copyright {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 20px;
 }

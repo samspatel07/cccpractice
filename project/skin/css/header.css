@@ -1,40 +1,49 @@
-.header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* .logo {
-    font-size: 24px;
-
-} */
-/* .logo {
-    width: 150px; 
-    height: 50px; 
-     
-    background-size: contain; 
-    background-repeat: no-repeat; 
-    display: inline-block; 
-} */
-
-
-.nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-    padding: 5px 10px;
-    border-radius: 3px;
+header {
+  /* background-color: #afc2ea; Light blue */
+    /* color: #385a79; */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav a:hover {
-    background-color: #555;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-    .nav {
-        display: none;
-    }
+.mainlogo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+  padding: 15px;
+}
+
+nav a {
+  color: #120101;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+input[type="text"] {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+div:last-child a {
+  margin-left: 20px;
 }

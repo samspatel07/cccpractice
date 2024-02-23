@@ -40,26 +40,25 @@ class Core_Model_Resource_Abstract
 
     public function save(Core_Model_Abstract $abstract)
     {
-        $data = $abstract->getData();
-        if (isset($data[$this->getPrimaryKey()])) {
-            unset($data[$this->getPrimaryKey()]);
-        }
-        $sql = $this->insertSql($this->getTableName(), $data);
-        $id = $this->getAdapter()->insert($sql);
-        $abstract->setId($id);
-        // {
-        //     $data = $product->getData();
-        //     if (isset($data[$this->getPrimaryKey()])) {
-        //         $id = $data[$this->getPrimaryKey()];
-        //         unset($data[$this->getPrimaryKey()]);
-        //         $query = "UPDATE {$this->_tableName} SET " . $this->prepareUpdateData($data) . " WHERE {$this->_primaryKey} = {$id}";
-        //         $this->getAdapter()->update($query);
-        //     } else {
-        //         $sql = $this->insertSql($this->getTableName(), $data);
-        //         $id = $this->getAdapter()->insert($sql);
-        //         $product->setId($id);
-        //     }
+        // $data = $abstract->getData();
+        // if (isset($data[$this->getPrimaryKey()])) {
+        //     unset($data[$this->getPrimaryKey()]);
         // }
+        // $sql = $this->insertSql($this->getTableName(), $data);
+        // $id = $this->getAdapter()->insert($sql);
+        // $abstract->setId($id);
+        
+            $data = $abstract->getData();
+            if (isset($data[$this->getPrimaryKey()]) && !empty($data[$this->getPrimaryKey()])) {
+                unset($data[$this->getPrimaryKey()]);
+                $query = $this->updateSql($this->getTableName(), $data, $abstract->getId());
+                $this->getAdapter()->update($query);
+            } else {
+                $sql = $this->insertSql($this->getTableName(), $data);
+                $id = $this->getAdapter()->insert($sql);
+                $abstract->setId($id);
+            }
+        
     }
 
     public function insertSql($tablename, $data)
@@ -72,5 +71,14 @@ class Core_Model_Resource_Abstract
         $columns = implode(", ", $columns);
         $values = implode(", ", $values);
         return "INSERT INTO {$tablename} ({$columns}) VALUES ({$values})";
+    }
+    public function updateSql($tableName, $data, $primaryKey){
+        $columns = [];
+        foreach ($data as $col => $val) {
+            $columns[] = "`$col` = '$val'";
+            
+        }
+        $columns = implode(", ", $columns);
+        return "UPDATE {$tableName} SET {$columns}  WHERE {$this->getPrimaryKey()} = {$primaryKey}";
     }
 }

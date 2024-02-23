@@ -8,7 +8,7 @@ class Admin_Controller_Catalog_Product extends Core_Controller_Front_Action
         $layout = $this->getLayout();
         $child = $layout->getChild('content');
 
-        $productForm = $layout->createBlock('catalog/admin_product');
+        $productForm = $layout->createBlock('catalog/admin_product_form');
         $child->addChild('form', $productForm);
         $layout->toHtml();
     }
@@ -24,8 +24,7 @@ class Admin_Controller_Catalog_Product extends Core_Controller_Front_Action
         echo "<pre>";
         $productId = $this->getRequest()->getParams('product_id');
         Mage::getModel('catalog/product')
-            ->setId($productId)
-            ->delete();
+            ->load($productId)->delete();
     }
 
     public function includeCss()
@@ -34,6 +33,17 @@ class Admin_Controller_Catalog_Product extends Core_Controller_Front_Action
         $layout->getChild('head')
             ->addCss('header.css')
             ->addCss('footer.css')
+            ->addCss('product/list.css')
             ->addCss('product/form.css');
+    }
+    public function listAction()
+    {
+        $this->includeCss();
+        $layout = $this->getLayout();
+        $child = $layout->getChild('content');
+
+        $productlist = $layout->createBlock('catalog/admin_product_list');
+        $child->addChild('list', $productlist);
+        $layout->toHtml();
     }
 }
