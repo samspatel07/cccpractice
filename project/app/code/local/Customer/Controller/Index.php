@@ -17,7 +17,5 @@ class Customer_Controller_Index
     {
         echo "Customer Delete Action";
     }
-    // public function updaAction(){
-    //     echo "Customer Update Action";
-    // }
+    
 }

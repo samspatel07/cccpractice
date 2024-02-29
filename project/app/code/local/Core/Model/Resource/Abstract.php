@@ -47,18 +47,18 @@ class Core_Model_Resource_Abstract
         // $sql = $this->insertSql($this->getTableName(), $data);
         // $id = $this->getAdapter()->insert($sql);
         // $abstract->setId($id);
-        
-            $data = $abstract->getData();
-            if (isset($data[$this->getPrimaryKey()]) && !empty($data[$this->getPrimaryKey()])) {
-                unset($data[$this->getPrimaryKey()]);
-                $query = $this->updateSql($this->getTableName(), $data, $abstract->getId());
-                $this->getAdapter()->update($query);
-            } else {
-                $sql = $this->insertSql($this->getTableName(), $data);
-                $id = $this->getAdapter()->insert($sql);
-                $abstract->setId($id);
-            }
-        
+
+        $data = $abstract->getData();
+        if (isset($data[$this->getPrimaryKey()]) && !empty($data[$this->getPrimaryKey()])) {
+            unset($data[$this->getPrimaryKey()]);
+            $query = $this->updateSql($this->getTableName(), $data, $abstract->getId());
+            $this->getAdapter()->update($query);
+        } else {
+            $sql = $this->insertSql($this->getTableName(), $data);
+            $id = $this->getAdapter()->insert($sql);
+            $abstract->setId($id);
+        }
+
     }
 
     public function insertSql($tablename, $data)
@@ -72,13 +72,15 @@ class Core_Model_Resource_Abstract
         $values = implode(", ", $values);
         return "INSERT INTO {$tablename} ({$columns}) VALUES ({$values})";
     }
-    public function updateSql($tableName, $data, $primaryKey){
+    public function updateSql($tableName, $data, $primaryKey)
+    {
         $columns = [];
         foreach ($data as $col => $val) {
             $columns[] = "`$col` = '$val'";
-            
+
         }
         $columns = implode(", ", $columns);
-        return "UPDATE {$tableName} SET {$columns}  WHERE {$this->getPrimaryKey()} = {$primaryKey}";
+        return "UPDATE {$this->getTableName()} SET {$columns}  WHERE {$this->getPrimaryKey()} = {$primaryKey}";
+
     }
 }

@@ -5,8 +5,8 @@ body {
 }
 
 header {
-  /* background-color: #afc2ea; Light blue */
-    /* color: #385a79; */
+  background-color: #dde3ee; 
+  color: #edeff1; 
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -21,7 +21,7 @@ header {
 .mainlogo {
   width: 50px;
   height: 50px;
-  margin-right: 10px;
+  margin-right: 600px;
 }
 
 nav {

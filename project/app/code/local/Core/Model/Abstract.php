@@ -39,6 +39,12 @@ class Core_Model_Abstract
     }
     public function getCollection()
     {
+        $collection = new $this->_collectionClass();
+        $collection->setResource($this->getResource());
+        $collection->setModel(get_class($this));
+        $collection->select();
+        return $collection;
+
     }
     // public function getPrimaryKey()
     // {
@@ -96,15 +102,9 @@ class Core_Model_Abstract
     }
     public function delete()
     {
-        if($this->getId()){
+        if ($this->getId()) {
             $this->getResource()->delete($this);
         }
         return $this;
     }
-    // public function update()
-    // {
-    //     $this->getResource()->update($this);
-    //     return $this;
-    // }
-
 }

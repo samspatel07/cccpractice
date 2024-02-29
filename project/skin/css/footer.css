@@ -1,6 +1,6 @@
 Overall color scheme
 .footer {
-    background-color: #afc2ea; /* Light blue */
+    background-color: #667ba4; /* Light blue */
     color: #385a79; /* Dark teal */
   }
   
@@ -157,6 +157,7 @@ Overall color scheme
 }
 
 .footer-copyright {
+    background-color: rgb(189, 199, 206);
     margin-top: 20px;
     text-align: center;
     color: #666;

@@ -80,9 +80,18 @@ $data = $this->getProduct();
                     id="min_price">
             </div>
 
-            <div>
+            <!-- <div>
                 <label for="status">Status:</label>
                 <input type="text" value="<?php echo $data->getStatus() ?>" name="catalog_product[status]" id="status">
+            </div> -->
+            <div class="row">
+                <label for="status">Status:</label>
+                <select name="catalog_product[status]" id="status">
+                    <option value="enable" <?php echo ($data->getStatus() === 'enable') ? 'selected' : ''; ?>>Enable
+                    </option>
+                    <option value="disable" <?php echo ($data->getStatus() === 'disable') ? 'selected' : ''; ?>>Disable
+                    </option>
+                </select>
             </div>
 
         </div>
